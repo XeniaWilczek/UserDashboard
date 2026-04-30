@@ -8,7 +8,7 @@ function Overview() {
   const { users, dispatch } = useUserContext();
   const navigate = useNavigate();
   const handleEditClick = (user: User) => {
-    navigate(`/edit/${user.id}`);
+    navigate(`./edit/${user.id}`);
   };
   return (
     <div className="user-card-container">

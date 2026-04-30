@@ -65,7 +65,7 @@ function Edit() {
     };
 
     dispatch({ type: "UPDATE_USER", payload: updatedUser });
-    navigate("/");
+    navigate("../");
   }
 
   return (
