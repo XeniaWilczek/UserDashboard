@@ -21,7 +21,11 @@ function UserCard({ user, onDelete, onEdit }: UserCardProps) {
   return (
     <div className="user-card" onClick={() => onEdit(user)}>
       <div className="user-card__left-container">
-        <img className="user-card__image" src="./images/user.jpg" alt="user" />
+        <img
+          className="user-card__image"
+          src="/User-Uebersicht/images/user.jpg"
+          alt="user"
+        />
       </div>
       <div className="user-card__right-container">
         <div className="upper-div">
