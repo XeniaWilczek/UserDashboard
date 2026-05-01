@@ -1,4 +1,4 @@
-import type { User } from "../userType";
+import type { User } from "../types/user.type";
 
 export const initialState: User = {
   username: "Name",

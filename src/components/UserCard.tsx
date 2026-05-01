@@ -9,7 +9,7 @@ import {
   faTrash,
   faVenusMars,
 } from "@fortawesome/free-solid-svg-icons";
-import type { User } from "../userType";
+import type { User } from "../types/user.type";
 
 interface UserCardProps {
   user: User;

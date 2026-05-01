@@ -2,7 +2,7 @@ import "./Overview.scss";
 import { useNavigate } from "react-router-dom";
 import UserCard from "../../components/UserCard";
 import { useUserContext } from "../../context/userContext";
-import type { User } from "../../userType";
+import type { User } from "../../types/user.type";
 
 function Overview() {
   const { users, dispatch } = useUserContext();

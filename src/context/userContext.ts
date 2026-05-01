@@ -1,5 +1,5 @@
 import { createContext, useContext, type Dispatch } from "react";
-import type { User } from "../userType";
+import type { User } from "../types/user.type";
 import type { UserAction } from "../hooks/useUserReducer";
 
 //Schablone für UserContext festlegen

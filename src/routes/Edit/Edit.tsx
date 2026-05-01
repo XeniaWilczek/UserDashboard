@@ -6,7 +6,7 @@ import Button from "../../components/Button";
 import { useInputValue } from "../../hooks/useInputValue";
 import { useUserContext } from "../../context/userContext";
 import { useNavigate } from "react-router-dom";
-import type { User } from "../../userType";
+import type { User } from "../../types/user.type";
 import { useParams } from "react-router-dom";
 
 function Edit() {

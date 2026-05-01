@@ -12,18 +12,16 @@ function FreeInput({
   onChange: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 }) {
   return (
-    <>
-      <label className="input-container__label">
-        {text + ":"}
-        <input
-          type="text"
-          placeholder={placeholder}
-          className="input-container__input"
-          value={inputValue}
-          onChange={onChange}
-        ></input>
-      </label>
-    </>
+    <label className="input-container__label">
+      {text + ":"}
+      <input
+        type="text"
+        placeholder={placeholder}
+        className="input-container__input"
+        value={inputValue}
+        onChange={onChange}
+      ></input>
+    </label>
   );
 }
 export default FreeInput;

@@ -2,10 +2,10 @@ import "./Create.scss";
 import FreeInput from "../../components/FreeInput";
 import SelectInput from "../../components/SelectInput";
 import DateInput from "../../components/DateInput";
-import Button from "../../components/Button";
 import { useInputValue } from "../../hooks/useInputValue";
 import { useUserContext } from "../../context/userContext";
 import { useNavigate } from "react-router-dom";
+import SubmitButton from "../../components/Button";
 
 function Create() {
   const { dispatch } = useUserContext();
@@ -106,7 +106,7 @@ function Create() {
         *Alle Eingabefelder müssen ausgefüllt sein!
       </p>
 
-      <Button onClick={handleCreateClick} text={"Abschicken"} />
+      <SubmitButton onClick={handleCreateClick} text={"Abschicken"} />
     </div>
   );
 }

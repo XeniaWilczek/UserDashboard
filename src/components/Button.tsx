@@ -3,7 +3,7 @@ type ButtonProps = {
   text: string;
 };
 
-function Button({ onClick, text }: ButtonProps) {
+function SubmitButton({ onClick, text }: ButtonProps) {
   return (
     <button className="input-container__submit-button" onClick={onClick}>
       {text}
@@ -11,4 +11,4 @@ function Button({ onClick, text }: ButtonProps) {
   );
 }
 
-export default Button;
+export default SubmitButton;
