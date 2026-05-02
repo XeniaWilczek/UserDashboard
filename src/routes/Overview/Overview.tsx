@@ -1,27 +1,15 @@
 import "./Overview.scss";
-import { useNavigate } from "react-router-dom";
-import UserCard from "../../components/UserCard";
+import UserCard from "../../components/userCard/UserCard";
 import { useUserContext } from "../../context/userContext";
-import type { User } from "../../types/user.type";
 
 function Overview() {
-  const { users, dispatch } = useUserContext();
-  const navigate = useNavigate();
-  const handleEditClick = (user: User) => {
-    navigate(`./edit/${user.id}`);
-  };
+  const { users } = useUserContext();
   return (
     <div className="user-card-container">
       {users.map((u) => (
-        <UserCard
-          key={u.id}
-          user={u}
-          onDelete={(id) => dispatch({ type: "REMOVE_USER", payload: id })}
-          onEdit={handleEditClick}
-        />
+        <UserCard key={u.id} user={u} />
       ))}
     </div>
   );
 }
-
 export default Overview;

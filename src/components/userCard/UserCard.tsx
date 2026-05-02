@@ -9,17 +9,23 @@ import {
   faTrash,
   faVenusMars,
 } from "@fortawesome/free-solid-svg-icons";
-import type { User } from "../types/user.type";
+import type { User } from "../../types/user.type";
+import { useUserContext } from "../../context/userContext";
+import { useNavigate } from "react-router-dom";
 
 interface UserCardProps {
   user: User;
-  onDelete: (id: number) => void;
-  onEdit: (user: User) => void;
 }
 
-function UserCard({ user, onDelete, onEdit }: UserCardProps) {
+function UserCard({ user }: UserCardProps) {
+  const navigate = useNavigate();
+  const { dispatch } = useUserContext();
+  const handleEditClick = () => {
+    navigate(`./edit/${user.id}`);
+  };
+
   return (
-    <div className="user-card" onClick={() => onEdit(user)}>
+    <div className="user-card" onClick={handleEditClick}>
       <div className="user-card__left-container">
         <img
           className="user-card__image"
@@ -36,7 +42,7 @@ function UserCard({ user, onDelete, onEdit }: UserCardProps) {
             onClick={(e) => {
               //onEdit soll nicht beim Anklicken des Delete-Buttons ausgelöst werden
               e.stopPropagation();
-              onDelete(user.id);
+              dispatch({ type: "REMOVE_USER", payload: user.id });
             }}
           >
             <FontAwesomeIcon icon={faTrash} />

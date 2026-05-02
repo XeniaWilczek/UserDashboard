@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { ChangeEvent } from "react";
 
 export function useInputValue(initialValue: string | number) {
-  const [inputValue, setInputValue] = useState(initialValue);
+  const [inputValue, setInputValue] = useState<string | number>(initialValue);
 
   function handleInputChangeEvent(
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement>,

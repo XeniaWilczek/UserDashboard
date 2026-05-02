@@ -1,31 +1,34 @@
 import "../Create/Create.scss";
-import FreeInput from "../../components/FreeInput";
-import SelectInput from "../../components/SelectInput";
-import DateInput from "../../components/DateInput";
-import Button from "../../components/Button";
+import FreeInput from "../../components/freeInput/FreeInput";
+import SelectInput from "../../components/selectInput/SelectInput";
+import DateInput from "../../components/dateInput/DateInput";
+import Button from "../../components/button/Button";
 import { useInputValue } from "../../hooks/useInputValue";
 import { useUserContext } from "../../context/userContext";
 import { useNavigate } from "react-router-dom";
 import type { User } from "../../types/user.type";
 import { useParams } from "react-router-dom";
+import SubmitButton from "../../components/button/Button";
 
 function Edit() {
   const { id } = useParams();
   const { users, dispatch } = useUserContext();
   const navigate = useNavigate();
   const userToEdit = users.find((u) => u.id === Number(id));
-  const userTemplate: User = {
-    username: "",
-    email: "",
-    id: 0,
-    address: "",
-    dateOfBirth: "0",
-    gender: "",
-    phoneNumber: 0,
-    website: "",
-  };
 
-  const data = userToEdit || userTemplate;
+  if (!userToEdit) {
+    return (
+      <div className="input-container">
+        <h2>Fehler: Userer nicht gefunden!</h2>
+        <SubmitButton
+          onClick={() => navigate("../")}
+          text="Zurück zur Übersicht"
+        />
+      </div>
+    );
+  }
+
+  const data = userToEdit;
 
   const userName = useInputValue(data.username);
   const dateOfBirth = useInputValue(data.dateOfBirth);
@@ -52,7 +55,7 @@ function Edit() {
       alert("Bitte alle Felder ausfüllen!");
       return;
     }
-    //Typabsicherung (wurden als string oder number definiert)
+    //Typabsicherung (Eigenschften wurden als string oder number definiert)
     const updatedUser: User = {
       ...data,
       username: String(userName.inputValue),

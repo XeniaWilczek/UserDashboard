@@ -1,16 +1,5 @@
 import type { User } from "../types/user.type";
 
-export const initialState: User = {
-  username: "Name",
-  dateOfBirth: "0",
-  gender: "Geschlecht",
-  address: "Anschrift",
-  email: "E-Mail",
-  phoneNumber: 0,
-  website: "Website",
-  id: 0,
-};
-
 export type UserAction =
   | { type: "ADD_USER"; payload: User }
   | { type: "REMOVE_USER"; payload: number }

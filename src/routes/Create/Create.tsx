@@ -1,11 +1,11 @@
 import "./Create.scss";
-import FreeInput from "../../components/FreeInput";
-import SelectInput from "../../components/SelectInput";
-import DateInput from "../../components/DateInput";
+import FreeInput from "../../components/freeInput/FreeInput";
+import SelectInput from "../../components/selectInput/SelectInput";
+import DateInput from "../../components/dateInput/DateInput";
 import { useInputValue } from "../../hooks/useInputValue";
 import { useUserContext } from "../../context/userContext";
 import { useNavigate } from "react-router-dom";
-import SubmitButton from "../../components/Button";
+import SubmitButton from "../../components/button/Button";
 
 function Create() {
   const { dispatch } = useUserContext();
