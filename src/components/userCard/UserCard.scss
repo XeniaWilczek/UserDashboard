@@ -3,11 +3,10 @@
   gap: 1rem;
   height: 200px;
   width: 400px;
-  background-color: yellow;
+  background-color: $primary-color;
   border: none;
   border-radius: $border-radius;
-  margin: 1rem;
-  background-color: $primary-color;
+
   &:hover {
     background-color: $hover-color;
     cursor: pointer;
@@ -30,8 +29,8 @@
     margin: 0;
     border: none;
     border-right: $border;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
