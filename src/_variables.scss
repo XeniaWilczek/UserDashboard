@@ -1,5 +1,6 @@
-$primary-color: lightgray;
-$border: 1px solid #555;
-$hover-color: #c0c0c0;
-$border-radius: 10px;
-$primary-font-color: black;
+$primary-color: lightgray !global;
+$border: 1px solid #555 !global;
+$hover-color: #c0c0c0 !global;
+$border-radius: 10px !global;
+$primary-font-color: black !global;
+$button-background: lightblue !global;

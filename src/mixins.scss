@@ -1,10 +1,5 @@
-@use "sass:color";
 @use "@/variables" as *;
 
-@mixin button-hover($c1, $c2, $c3, $c4) {
-  background: linear-gradient(45deg, $c1, $c2, $c3, $c4);
-  cursor: pointer;
-}
 @mixin label-layout {
   height: 40px;
   width: 300px;
@@ -21,7 +16,6 @@
   height: 40px;
   width: 300px;
   padding-left: 0.5rem;
-  box-sizing: border-box;
 }
 @mixin button {
   height: 40px;
@@ -29,11 +23,14 @@
   color: $primary-font-color;
   font-size: 1rem;
   font-weight: 600;
-  background-color: lightblue;
+  background-color: $button-background;
   padding: 0.5rem;
-  box-sizing: border-box;
   border: none;
   border-radius: $border-radius;
   margin-bottom: 0.5rem;
   text-align: center;
+}
+@mixin button-hover($c1, $c2, $c3, $c4) {
+  background: linear-gradient(45deg, $c1, $c2, $c3, $c4);
+  cursor: pointer;
 }

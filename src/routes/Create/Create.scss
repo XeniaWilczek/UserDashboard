@@ -12,14 +12,14 @@
     @include label-layout;
   }
   &__input {
-    @include input-layout(($primary-color));
+    @include input-layout($primary-color);
   }
   &__submit-button {
     @include button;
   }
   &__submit-button:hover {
-    cursor: pointer;
     background-color: #87ceeb;
+    cursor: pointer;
   }
   &__alert {
     color: $primary-font-color;

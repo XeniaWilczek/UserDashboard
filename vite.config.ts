@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      // Definiert @ als Abkürzung für den src-Ordner
       "@": path.resolve(__dirname, "./src"),
     },
   },
@@ -15,12 +14,20 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // Lädt die Partials global ohne Namespace (as *)
-        // Wichtig: Semikolon am Ende jeder Zeile innerhalb des Strings!
-        additionalData: `
-          @use "@/variables" as *;
-          @use "@/mixins" as *;
-        `,
+        additionalData: (content, filename) => {
+          if (
+            filename.includes("variables.scss") ||
+            filename.includes("mixins.scss")
+          ) {
+            return content;
+          }
+
+          return `
+            @use "@/variables" as *;
+            @use "@/mixins" as *;
+            ${content}
+          `;
+        },
       },
     },
   },
