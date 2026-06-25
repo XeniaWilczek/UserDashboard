@@ -7,7 +7,7 @@ import {
   faGlobe,
   faPhone,
   faTrash,
-  faVenusMars,
+  faTransgender,
 } from "@fortawesome/free-solid-svg-icons";
 import type { User } from "../../types/user.type";
 import { useUserContext } from "../../context/userContext";
@@ -59,7 +59,7 @@ function UserCard({ user }: UserCardProps) {
             })}
           </span>
           <span className="lower-div__user-attributes">
-            <FontAwesomeIcon icon={faVenusMars} />
+            <FontAwesomeIcon icon={faTransgender} />
             {user.gender}
           </span>
           <span className="lower-div__user-attributes">

@@ -28,16 +28,16 @@
     background-color: $primary-color;
     margin: 0;
     border: none;
-    border-right: $border;
     border-top-left-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    overflow: hidden;
   }
   &__image {
     height: auto;
     width: 150px;
-    border-radius: $border-radius;
+    border-radius: 0;
   }
 
   &__right-container {
@@ -48,15 +48,17 @@
     width: 250px;
     border: none;
     border-radius: $border-radius;
+    overflow: hidden;
   }
 }
 //Inhalt von "right-container"
 .upper-div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: $primary-color;
   height: 50px;
-  width: 250px;
+  width: 100%;
   box-sizing: border-box;
   padding: 0.5rem;
   border-radius: $border-radius;
@@ -64,6 +66,9 @@
   &__username {
     font-size: 1rem;
     font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__delete-button {
     font-size: 1rem;
@@ -73,6 +78,7 @@
     width: 20px;
     border: none;
     cursor: pointer;
+    flex-shrink: 0;
   }
 }
 
@@ -94,5 +100,9 @@
     gap: 0.5rem;
     font-size: 0.8rem;
     color: $primary-font-color;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
