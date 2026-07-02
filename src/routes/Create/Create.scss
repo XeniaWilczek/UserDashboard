@@ -8,19 +8,37 @@
   padding: 0;
   height: 100vh;
   width: 400px;
+
   &__label {
     @include label-layout;
   }
+
   &__input {
     @include input-layout($primary-color);
+
+    //Anpassung Kalenderanzeige für kleine Bildschirme
+    &[type="date"] {
+      min-height: 2.5rem;
+      -webkit-appearance: listbox;
+      appearance: auto;
+
+      &::-webkit-calendar-picker-indicator {
+        display: block;
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
   }
+
   &__submit-button {
     @include button;
+
+    &:hover {
+      background-color: #87ceeb;
+      cursor: pointer;
+    }
   }
-  &__submit-button:hover {
-    background-color: #87ceeb;
-    cursor: pointer;
-  }
+
   &__alert {
     color: $primary-font-color;
     font-size: 0.8rem;
