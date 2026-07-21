@@ -29,7 +29,7 @@ function UserCard({ user }: UserCardProps) {
       <div className="user-card__left-container">
         <img
           className="user-card__image"
-          src="/User-Uebersicht/images/user.jpg"
+          src={`${import.meta.env.BASE_URL}images/user.jpg`}
           alt="user"
         />
       </div>

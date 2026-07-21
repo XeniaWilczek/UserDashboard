@@ -23,7 +23,7 @@ function App() {
       },
     ],
     {
-      basename: "/UserDashboard",
+      basename: import.meta.env.BASE_URL,
     },
   );
 
