@@ -23,7 +23,7 @@ function App() {
       },
     ],
     {
-      basename: "/User-Uebersicht",
+      basename: "/UserDashboard",
     },
   );
 
